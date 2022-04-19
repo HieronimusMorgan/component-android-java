@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="component">
+        <attr name="header" format="string" />
+        <attr name="title" format="string" />
+        <attr name="description" format="string" />
+        <attr name="hint" format="string" />
+        <attr name="helper" format="string" />
+        <attr name="button" format="string" />
+        <attr name="prefix" format="string" />
+        <attr name="type" format="string" />
+        <attr name="message" format="string" />
+        <attr name="count" format="integer" />
+        <attr name="image" format="reference" />
+    </declare-styleable>
+</resources>

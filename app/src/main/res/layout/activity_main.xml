@@ -1,0 +1,122 @@
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:component="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.morg.mycomponent.component.TextInputComponent
+            android:id="@+id/custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            component:header="Username"
+            component:hint="Please Input Username"
+            component:type="normal" />
+
+
+        <com.morg.mycomponent.component.TextInputComponent
+            android:id="@+id/customdropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            component:header="TextHelper"
+            component:helper="Make sure your input text"
+            component:hint="Please Input Text"
+            component:type="helper" />
+
+        <com.morg.mycomponent.component.TextInputComponent
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            component:header="Password"
+            component:hint="Please Input Password"
+            component:type="password" />
+
+        <com.morg.mycomponent.component.TextInputComponent
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            component:header="Phone Number"
+            component:hint="Please Input Phone Number"
+            component:type="phone" />
+
+        <com.morg.mycomponent.component.TextInputComponent
+            android:id="@+id/helper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            component:button="Check"
+            component:header="Text Button"
+            component:hint="Please Input Text"
+            component:type="textbutton" />
+
+        <com.morg.mycomponent.component.TextInputComponent
+            android:id="@+id/prefix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            component:header="Input With Prefix"
+            component:hint="Please Input"
+            component:prefix="Rp"
+            component:type="prefix" />
+
+        <com.morg.mycomponent.component.TextInputComponent
+            android:id="@+id/password_match"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            component:header="Password Match"
+            component:hint="Please Input Password"
+            component:type="password" />
+
+        <com.morg.mycomponent.component.TextInputComponent
+            android:id="@+id/password_not_match"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            component:header="Password Not Match"
+            component:hint="Please Input Password"
+            component:type="password" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/toast"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:text="toast" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/toast_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:text="toast button" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/toast_count"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="toast count" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
