@@ -4,10 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/drawable/line_steps_white_ic.xml" value="0.137" />
         <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/drawable/warning_icon.xml" value="0.12" />
-        <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/layout/custom_toast.xml" value="0.1" />
         <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/layout/dropdown_menu_popup_item.xml" value="0.2" />
+        <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/layout/progress_dialog.xml" value="0.25" />
+        <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/layout/test.xml" value="0.3734375" />
         <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>

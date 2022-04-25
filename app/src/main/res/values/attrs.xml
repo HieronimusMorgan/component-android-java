@@ -12,5 +12,7 @@
         <attr name="message" format="string" />
         <attr name="count" format="integer" />
         <attr name="image" format="reference" />
+        <attr name="buttonFirst" format="string" />
+        <attr name="buttonSecond" format="string" />
     </declare-styleable>
 </resources>

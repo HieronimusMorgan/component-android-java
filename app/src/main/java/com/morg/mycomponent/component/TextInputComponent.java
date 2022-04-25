@@ -335,7 +335,7 @@ public class TextInputComponent extends LinearLayout {
         materialButton.setOnClickListener(clickListener);
     }
 
-    private TextInputComponent isPasswordMatch(boolean password) {
+    public TextInputComponent isPasswordMatch(boolean password) {
         if (password) {
             textInputLayout.setHelperText("Password is match!");
             inputEditText.setBackground(getResources().getDrawable(R.drawable.password_match_border));
