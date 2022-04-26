@@ -27,7 +27,14 @@ u
 Eapp/src/main/java/com/morg/mycomponent/component/ButtonComponent.java,5\f\5f756b02082b6af17b26f830dd28a7060fb5cfc4
 u
 Eapp/src/main/java/com/morg/mycomponent/component/TextDescription.java,6\a\6a1d33f3d7fff4b5da88b7e5b9c289da599fdf96
-w
-Gapp/src/main/java/com/morg/mycomponent/component/SnackBarComponent.java,1\8\185a5a411b27c9f09a985da8cdcd55f9ab602a2e
 u
 Eapp/src/main/java/com/morg/mycomponent/component/DialogComponent.java,9\0\90124cb721131fec94eec47acadc17665993a397
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+}
+Mapp/src/main/java/com/morg/mycomponent/component/ProgressDialogComponent.java,5\a\5aae109b2fa84079052866bbb6b352ec05b1a30e
+j
+:app/src/main/java/com/morg/mycomponent/model/CardList.java,8\e\8ee68e267253f909ce9d0007714f425dd6e56b0e
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
