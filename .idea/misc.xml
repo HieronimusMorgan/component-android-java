@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/drawable/line_steps_white_ic.xml" value="0.137" />
+        <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/drawable/step_uncheck_ic.xml" value="0.2235" />
+        <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/drawable/uncheck.xml" value="0.2235" />
         <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/drawable/warning_icon.xml" value="0.12" />
         <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Project-Office/Component/MyComponent/app/src/main/res/layout/custom_toast.xml" value="0.1" />

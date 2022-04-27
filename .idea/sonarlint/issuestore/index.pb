@@ -38,3 +38,7 @@ j
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+s
+Capp/src/main/java/com/morg/mycomponent/component/CardComponent.java,5\1\511e01ed747a793c83caf5c2acd98e4b69a43106
+p
+@app/src/main/java/com/morg/mycomponent/component/TextHeader.java,0\a\0a2b2550ad43a402968e3ed755eb39a8195282fb

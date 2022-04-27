@@ -16,8 +16,9 @@
             android:id="@+id/step"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="4dp"
             component:count="5"
-            component:type="normal" />
+            component:type="check" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/progress_circular"

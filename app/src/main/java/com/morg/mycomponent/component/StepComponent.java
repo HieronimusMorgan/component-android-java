@@ -116,32 +116,42 @@ public class StepComponent extends LinearLayout {
         layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         linearLayout2.setLayoutParams(layoutParams);
         linearLayout2.setOrientation(HORIZONTAL);
-        linearLayout2.setGravity(Gravity.CENTER_VERTICAL);
-//        linearLayout2.setWeightSum(totalStep);
-        linearLayout2.setPadding(30, 30, 30, 30);
-
+        linearLayout2.setGravity(Gravity.CENTER);
+        linearLayout2.setWeightSum(totalStep);
         ImageView view;
-        for (int i = 0; i < totalStep - 1; i++) {
+
+        for (int i = 0; i < totalStep; i++) {
+            LinearLayout linearLayoutChild = new LinearLayout(linearLayout2.getContext());
+            linearLayoutChild.setOrientation(HORIZONTAL);
+            if (i == totalStep - 1) {
+                layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, 0);
+                linearLayoutChild.setLayoutParams(layoutParams);
+                linearLayoutChild.setGravity(Gravity.LEFT);
+            } else {
+                layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+                linearLayoutChild.setLayoutParams(layoutParams);
+                linearLayoutChild.setGravity(Gravity.CENTER);
+            }
+
             view = new ImageView(linearLayout2.getContext());
-            view.setPadding(5, 5, 5, 5);
+            if (i == 0) view.setBackground(getResources().getDrawable(R.drawable.check));
+            else view.setBackground(getResources().getDrawable(R.drawable.uncheck));
             layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             view.setLayoutParams(layoutParams);
-
-            if (i == 0)
-                view.setBackground(getResources().getDrawable(R.drawable.step_check_ic));
-            else
-                view.setBackground(getResources().getDrawable(R.drawable.step_uncheck_ic));
             imageViews.add(view);
-            view.setScaleType(ImageView.ScaleType.FIT_XY);
-//            view.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-            linearLayout2.addView(view);
+
+            LinearLayout line = new LinearLayout(linearLayout2.getContext());
+            layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 5);
+            line.setLayoutParams(layoutParams);
+            line.setBackgroundColor(getResources().getColor(R.color.grey));
+
+            linearLayoutChild.addView(view);
+            if (i < totalStep - 1) {
+                linearLayoutChild.addView(line);
+            }
+
+            linearLayout2.addView(linearLayoutChild);
         }
-        view = new ImageView(linearLayout2.getContext());
-        view.setLayoutParams(layoutParams);
-        view.setScaleType(ImageView.ScaleType.FIT_XY);
-        view.setBackground(getResources().getDrawable(R.drawable.uncheck));
-        imageViews.add(view);
-        linearLayout2.addView(view);
 
         linearLayout1 = new LinearLayout(getContext());
         layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -166,7 +176,7 @@ public class StepComponent extends LinearLayout {
 
         addView(linearLayout2);
         addView(linearLayout1);
-
+        setGravity(Gravity.CENTER);
         return this;
     }
 
@@ -184,19 +194,11 @@ public class StepComponent extends LinearLayout {
                 tvTitle.setText(titles.get(count));
                 tvSteps.setText(String.format("Step %d%s", count + 1, steps));
             }
-        } else if (type.equalsIgnoreCase("check")) {
+        } else if (type.equalsIgnoreCase("check") && count < totalStep - 1) {
             count++;
-            if (count < totalStep - 1) {
-                imageViews.get(count).setBackground(getResources().getDrawable(R.drawable.step_check_ic));
-                imageViews.get(count).setScaleType(ImageView.ScaleType.FIT_XY);
-                tvTitle.setText(titles.get(count));
-                tvSteps.setText(String.format("%d%s", count + 1, steps));
-            } else if (count < totalStep) {
-                imageViews.get(count).setBackground(getResources().getDrawable(R.drawable.check));
-                imageViews.get(count).setScaleType(ImageView.ScaleType.FIT_XY);
-                tvTitle.setText(titles.get(count));
-                tvSteps.setText(String.format("%d%s", count + 1, steps));
-            }
+            imageViews.get(count).setBackground(getResources().getDrawable(R.drawable.check));
+            tvTitle.setText(titles.get(count));
+            tvSteps.setText(String.format("%d%s", count + 1, steps));
         }
 
         return this;
@@ -211,13 +213,7 @@ public class StepComponent extends LinearLayout {
                 tvTitle.setText(titles.get(count));
             }
         } else if (type.equalsIgnoreCase("check") && count > 0) {
-            if (count == totalStep - 1) {
-                imageViews.get(count).setBackground(getResources().getDrawable(R.drawable.uncheck));
-                imageViews.get(count).setScaleType(ImageView.ScaleType.FIT_XY);
-            } else if (count < totalStep && count > 0) {
-                imageViews.get(count).setBackground(getResources().getDrawable(R.drawable.step_uncheck_ic));
-                imageViews.get(count).setScaleType(ImageView.ScaleType.FIT_XY);
-            }
+            imageViews.get(count).setBackground(getResources().getDrawable(R.drawable.uncheck));
             tvSteps.setText(String.format("%d%s", count, steps));
             count--;
             tvTitle.setText(titles.get(count));
