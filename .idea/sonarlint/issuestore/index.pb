@@ -27,8 +27,6 @@ u
 Eapp/src/main/java/com/morg/mycomponent/component/ButtonComponent.java,5\f\5f756b02082b6af17b26f830dd28a7060fb5cfc4
 u
 Eapp/src/main/java/com/morg/mycomponent/component/TextDescription.java,6\a\6a1d33f3d7fff4b5da88b7e5b9c289da599fdf96
-u
-Eapp/src/main/java/com/morg/mycomponent/component/DialogComponent.java,9\0\90124cb721131fec94eec47acadc17665993a397
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 }
@@ -40,5 +38,11 @@ j
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 s
 Capp/src/main/java/com/morg/mycomponent/component/CardComponent.java,5\1\511e01ed747a793c83caf5c2acd98e4b69a43106
+s
+Capp/src/main/java/com/morg/mycomponent/component/StepComponent.java,1\6\165651d05ded622eedd471389842570ef35c092e
 p
 @app/src/main/java/com/morg/mycomponent/component/TextHeader.java,0\a\0a2b2550ad43a402968e3ed755eb39a8195282fb
+u
+Eapp/src/main/java/com/morg/mycomponent/component/DialogComponent.java,9\0\90124cb721131fec94eec47acadc17665993a397
+x
+Happ/src/main/java/com/morg/mycomponent/component/TextInputComponent.java,9\a\9a509d1404c99c08a48aef7b18fde1e121bd550c

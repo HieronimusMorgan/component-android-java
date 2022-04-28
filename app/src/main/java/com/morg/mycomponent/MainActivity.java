@@ -1,10 +1,12 @@
 package com.morg.mycomponent;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
+import com.morg.mycomponent.component.BottomSheetComponent;
 import com.morg.mycomponent.component.ProgressDialogComponent;
 import com.morg.mycomponent.databinding.ActivityMainBinding;
 import com.morg.mycomponent.model.CardList;
@@ -50,5 +52,18 @@ public class MainActivity extends AppCompatActivity {
         titles.add("User Profile 4");
         titles.add("User Profile 5");
         binding.step.setTitle(titles);
+        binding.bottomSheet.setOnClickListener(view -> {
+            BottomSheetComponent bottomSheetComponent = new BottomSheetComponent(this);
+            bottomSheetComponent.setTitle("Peringatan");
+            bottomSheetComponent.setDescription("Declare all the views and call them by id as specified in the Bottom Sheet layout. Finally, we will diplay the dialog using bottomSheetDialog.show().");
+            bottomSheetComponent.setButtonYes("Lanjutkan");
+            bottomSheetComponent.setButtonNo("Batal");
+            bottomSheetComponent.isButtonYes(false);
+            bottomSheetComponent.setCancelable(false);
+            bottomSheetComponent.setOnClickButtonYes(view1 -> binding.step.next());
+            bottomSheetComponent.setOnClickButtonNo(view1 -> binding.step.previous());
+            bottomSheetComponent.show(getSupportFragmentManager(), bottomSheetComponent.getTag());
+
+        });
     }
 }

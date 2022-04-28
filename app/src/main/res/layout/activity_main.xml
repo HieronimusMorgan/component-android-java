@@ -34,6 +34,13 @@
             android:autoSizeTextType="uniform"
             android:text="Dialog" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoSizeTextType="uniform"
+            android:text="Show Bottom Sheet" />
+
         <com.morg.mycomponent.component.CardComponent
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
