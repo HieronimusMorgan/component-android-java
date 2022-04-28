@@ -29,8 +29,7 @@ dist/
 target/
 
 # JetBrains IDE
-.idea/
-.idea/sonarlint/
+.idea
 
 # Unit test reports
 TEST*.xml
