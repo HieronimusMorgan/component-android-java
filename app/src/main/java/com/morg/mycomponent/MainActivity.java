@@ -1,13 +1,16 @@
 package com.morg.mycomponent;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.button.MaterialButton;
 import com.morg.mycomponent.component.BottomSheetComponent;
+import com.morg.mycomponent.component.DialogComponent;
 import com.morg.mycomponent.component.ProgressDialogComponent;
+import com.morg.mycomponent.component.SnackBarComponent;
 import com.morg.mycomponent.databinding.ActivityMainBinding;
 import com.morg.mycomponent.model.CardList;
 
@@ -21,18 +24,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         ProgressDialogComponent progressDialogComponent = new ProgressDialogComponent(this);
         progressDialogComponent.setMessage("Please Wait...");
-        MaterialButton materialButton = binding.progressCircular;
-        materialButton.setOnClickListener(view -> {
-//            progressDialogComponent.show();
-//            new Handler().postDelayed(() -> progressDialogComponent.hide(), 10000);
+
+        binding.next.setOnClickListener(view -> {
             binding.step.next();
         });
-        binding.progressCircularA.setOnClickListener(view -> {
+        binding.previous.setOnClickListener(view -> {
             binding.step.previous();
         });
-//        CardComponent cardComponent = new CardComponent(this);
         List<CardList> cardLists = new ArrayList<>();
         cardLists.add(new CardList("Name", "Aldi Taher"));
         cardLists.add(new CardList("Name", "Aldi Taher"));
@@ -40,9 +41,45 @@ public class MainActivity extends AppCompatActivity {
         cardLists.add(new CardList("Name", "Aldi Taher"));
         cardLists.add(new CardList("Name", "Aldi Taher"));
         cardLists.add(new CardList("Name", "Aldi Taher"));
-//        cardComponent.cardComponentList(cardLists);
         binding.card.cardComponentList(cardLists);
-//        binding.as.addView(cardComponent);
+
+        binding.dialog1.setOnClickListener(view -> {
+            DialogComponent dialogComponent = new DialogComponent(this);
+            dialogComponent.withImage(false);
+            dialogComponent.setHeader("Confirmation");
+            dialogComponent.setDescription("Are you sure want to Logout from the application?");
+            dialogComponent.setLabelSubmitButton("Yes, Logout");
+            dialogComponent.setLabelCancelButton("Cancel");
+            dialogComponent.setSubmitOnClickListener(view1 -> Toast.makeText(this, "Logout Confirm", Toast.LENGTH_SHORT).show());
+            dialogComponent.show();
+        });
+        binding.dialog2.setOnClickListener(view -> {
+            DialogComponent dialogComponent = new DialogComponent(this);
+            dialogComponent.withImage(false);
+            dialogComponent.setHeader("Warning");
+            dialogComponent.setDescription("Are you sure want to Logout from the application?");
+            dialogComponent.setLabelSubmitButton("Yes, Logout");
+            dialogComponent.setLabelCancelButton("Cancel");
+            dialogComponent.withImage(true);
+            dialogComponent.imageWarning();
+            dialogComponent.setSubmitOnClickListener(view1 -> Toast.makeText(this, "Logout Confirm", Toast.LENGTH_SHORT).show());
+            dialogComponent.show();
+        });
+        binding.dialog3.setOnClickListener(view -> {
+            DialogComponent dialogComponent = new DialogComponent(this);
+            dialogComponent.withImage(false);
+            dialogComponent.setHeader("Success");
+            dialogComponent.setDescription("Your data was successfully saved!");
+            dialogComponent.setLabelSubmitButton("OK");
+            dialogComponent.setLabelCancelButton("Cancel");
+            dialogComponent.withImage(true);
+            dialogComponent.imageSuccess();
+            dialogComponent.setSubmitOnClickListener(view1 -> Toast.makeText(this, "Logout Confirm", Toast.LENGTH_SHORT).show());
+            dialogComponent.show();
+        });
+
+        binding.emptySpace.setOnClickListener(view -> startActivity(new Intent(this, EmptySpaceActivity.class)));
+
         binding.passwordMatch.isPasswordMatch(true);
         binding.passwordNotMatch.isPasswordMatch(false);
         List<String> titles = new ArrayList<>();
@@ -51,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
         titles.add("User Profile 3");
         titles.add("User Profile 4");
         titles.add("User Profile 5");
+        titles.add("User Profile 6");
+        titles.add("User Profile 7");
         binding.step.setTitle(titles);
         binding.bottomSheet.setOnClickListener(view -> {
             BottomSheetComponent bottomSheetComponent = new BottomSheetComponent(this);
@@ -65,5 +104,9 @@ public class MainActivity extends AppCompatActivity {
             bottomSheetComponent.show(getSupportFragmentManager(), bottomSheetComponent.getTag());
 
         });
+        SnackBarComponent snackBarComponent = new SnackBarComponent(this);
+        binding.toast.setOnClickListener(view -> snackBarComponent.toast("Message"));
+        binding.toastBtn.setOnClickListener(view -> snackBarComponent.toastButton("Message", "Return", View::onCancelPendingInputEvents));
+        binding.toastCount.setOnClickListener(view -> snackBarComponent.toastCounting("Counting", getResources().getDrawable(R.drawable.image_icon), 5, () -> binding.step.next()));
     }
 }

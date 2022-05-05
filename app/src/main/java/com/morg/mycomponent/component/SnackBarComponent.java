@@ -36,7 +36,7 @@ public class SnackBarComponent {
 
         LinearLayout linearLayout = new LinearLayout(view.getContext());
         LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutParams1.setMargins(60, 40, 60, 40);
+        layoutParams1.setMargins(100, 30, 100, 30);
         linearLayout.setLayoutParams(layoutParams1);
         linearLayout.setGravity(Gravity.CENTER);
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -59,10 +59,9 @@ public class SnackBarComponent {
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         view.setLayoutParams(layoutParams);
         view.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.toast_rounded_background));
-
         LinearLayout linearLayout = new LinearLayout(view.getContext());
         LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutParams1.setMargins(60, 0, 60, 0);
+        layoutParams1.setMargins(100, 30, 100, 30);
         linearLayout.setLayoutParams(layoutParams1);
         linearLayout.setGravity(Gravity.CENTER);
         linearLayout.setWeightSum(2);
@@ -70,7 +69,7 @@ public class SnackBarComponent {
 
         TextView textView = new TextView(linearLayout.getContext());
         LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1.9F);
-        textViewParams.setMargins(0, 0, 8, 0);
+        textViewParams.setMargins(0, 0, 30, 0);
         textView.setText(message);
         textView.setLayoutParams(textViewParams);
         textView.setTextColor(context.getResources().getColor(R.color.white));
@@ -99,7 +98,7 @@ public class SnackBarComponent {
 
         LinearLayout linearLayout = new LinearLayout(view.getContext());
         LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutParams1.setMargins(60, 40, 45, 40);
+        layoutParams1.setMargins(100, 30, 100, 30);
         linearLayout.setLayoutParams(layoutParams1);
         linearLayout.setGravity(Gravity.CENTER);
         linearLayout.setWeightSum(2);

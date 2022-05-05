@@ -27,8 +27,7 @@ public class BottomSheetComponent extends BottomSheetDialogFragment {
 
         linearLayout = new LinearLayout(context);
         linearLayout.setPadding(20, 50, 20, 20);
-        linearLayout.setBackground(getResources().getDrawable(R.drawable.corner_bottom_sheet));
-        linearLayout.setOrientation(LinearLayout.VERTICAL);
+       linearLayout.setOrientation(LinearLayout.VERTICAL);
 
         tvTitle = new TextView(linearLayout.getContext());
         tvTitle.setTextSize(20);
@@ -51,7 +50,7 @@ public class BottomSheetComponent extends BottomSheetDialogFragment {
         layoutParams.setMargins(10, 10, 10, 10);
         btnYes.setLayoutParams(layoutParams);
 
-        btnNo = new MaterialButton(new ContextThemeWrapper(linearLayout1.getContext(), R.style.Widget_MaterialComponents_TextInputLayout_OutlinedBox));
+        btnNo = new MaterialButton(context, null, com.google.android.material.R.attr.materialButtonOutlinedStyle);
         btnNo.setLayoutParams(layoutParams);
 
         linearLayout1.addView(btnNo);

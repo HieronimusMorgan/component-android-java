@@ -194,11 +194,11 @@ public class StepComponent extends LinearLayout {
                 tvTitle.setText(titles.get(count));
                 tvSteps.setText(String.format("Step %d%s", count + 1, steps));
             }
-        } else if (type.equalsIgnoreCase("check") && count < totalStep - 1) {
-            count++;
+        } else if (type.equalsIgnoreCase("check") && count < totalStep) {
             imageViews.get(count).setBackground(getResources().getDrawable(R.drawable.check));
             tvTitle.setText(titles.get(count));
             tvSteps.setText(String.format("%d%s", count + 1, steps));
+            count++;
         }
 
         return this;
@@ -212,10 +212,10 @@ public class StepComponent extends LinearLayout {
                 count--;
                 tvTitle.setText(titles.get(count));
             }
-        } else if (type.equalsIgnoreCase("check") && count > 0) {
+        } else if (type.equalsIgnoreCase("check") && count > 1) {
+            count--;
             imageViews.get(count).setBackground(getResources().getDrawable(R.drawable.uncheck));
             tvSteps.setText(String.format("%d%s", count, steps));
-            count--;
             tvTitle.setText(titles.get(count));
         }
         return this;

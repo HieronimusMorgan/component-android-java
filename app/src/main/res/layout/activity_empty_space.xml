@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:component="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmptySpaceActivity">
+
+    <com.morg.mycomponent.component.EmptySpaceComponent
+        android:id="@+id/empty_space"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        component:description="Add for products to start your Product List"
+        component:image="@drawable/bucket_ic"
+        component:message="Product List is Empty" />
+</LinearLayout>

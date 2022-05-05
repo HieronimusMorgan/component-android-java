@@ -11,11 +11,10 @@ import android.content.res.TypedArray;
 import android.text.InputType;
 import android.util.AttributeSet;
 import android.view.ContextThemeWrapper;
-import android.view.Gravity;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,10 +22,10 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.TextViewCompat;
 
-import com.morg.mycomponent.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.morg.mycomponent.R;
 
 import java.util.List;
 
@@ -186,62 +185,55 @@ public class TextInputComponent extends LinearLayout {
     }
 
     private TextInputComponent phoneNumber() {
-        textView = new TextView(getContext());
         setOrientation(VERTICAL);
+        textView = new TextView(getContext());
         textViewParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
         textViewParams.setMargins(0, 0, 0, 20);
         textView.setLayoutParams(textViewParams);
         textView.setTextColor(getResources().getColor(R.color.black));
         textView.setText(header);
         addView(textView);
-        RelativeLayout relativeLayout = new RelativeLayout(getContext());
-        LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        relativeLayout.setLayoutParams(layoutParams);
 
-        textInputLayout = new TextInputLayout(new ContextThemeWrapper(getContext(), R.style.Widget_MaterialComponents_TextInputLayout_OutlinedBox));
-        textInputLayout.setBoxBackgroundMode(TextInputLayout.BOX_BACKGROUND_OUTLINE);
-        textInputLayout.setBoxBackgroundColor(ContextCompat.getColor(textInputLayout.getContext(), android.R.color.transparent));
-        RelativeLayout.LayoutParams clpTextInputLayout = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-        clpTextInputLayout.addRule(RelativeLayout.ALIGN_START, getId());
-        clpTextInputLayout.addRule(RelativeLayout.ALIGN_BOTTOM, getId());
-        clpTextInputLayout.addRule(RelativeLayout.ALIGN_TOP, getId());
-        clpTextInputLayout.addRule(RelativeLayout.ALIGN_END, getId());
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setOrientation(HORIZONTAL);
+        linearLayout.setWeightSum(2);
 
-        textInputLayout.setLayoutParams(clpTextInputLayout);
+        textInputLayout = new TextInputLayout(linearLayout.getContext(), null, com.google.android.material.R.attr.textInputOutlinedExposedDropdownMenuStyle);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, 0.4F);
+        textInputLayout.setLayoutParams(layoutParams);
+        textInputLayout.setBoxCornerRadii(12, 0, 12, 0);
         textInputLayout.setHintEnabled(false);
+
+        autoCompleteTextView = new AutoCompleteTextView(textInputLayout.getContext());
+        autoCompleteTextView.setInputType(InputType.TYPE_NULL);
+        autoCompleteTextView.setText("+622", false);
+        layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        autoCompleteTextView.setLayoutParams(layoutParams);
+        autoCompleteTextView.setBackground(null);
+        autoCompleteTextView.setPadding(30,0,0,0);
+        textInputLayout.addView(autoCompleteTextView);
+        linearLayout.addView(textInputLayout);
+
+
+        textInputLayout = new TextInputLayout(linearLayout.getContext(), null, com.google.android.material.R.attr.textInputOutlinedStyle);
+        layoutParams = new LinearLayout.LayoutParams(
+                LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, 1.6F);
+        textInputLayout.setLayoutParams(layoutParams);
+        textInputLayout.setBoxCornerRadii(0, 12, 0, 12);
+        textInputLayout.setHintEnabled(false);
+
         inputEditText = new TextInputEditText(textInputLayout.getContext());
+        layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        inputEditText.setLayoutParams(layoutParams);
         inputEditText.setInputType(InputType.TYPE_CLASS_NUMBER);
-        inputEditText.setPadding(190, 30, 30, 30);
         inputEditText.setHint(hint);
         textInputLayout.addView(inputEditText);
-        textInputLayout.setBoxCornerRadii(12, 12, 12, 12);
+        linearLayout.addView(textInputLayout);
 
-        TextInputLayout dropDownLayout = new TextInputLayout(new ContextThemeWrapper(getContext(), com.google.android.material.R.style.Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu));
-        dropDownLayout.setBoxBackgroundMode(TextInputLayout.BOX_BACKGROUND_FILLED);
-        RelativeLayout.LayoutParams dropDownLayoutParams = new RelativeLayout.LayoutParams(
-                180, RelativeLayout.LayoutParams.WRAP_CONTENT);
-        dropDownLayoutParams.addRule(RelativeLayout.ALIGN_START, dropDownLayout.getId());
-        dropDownLayoutParams.addRule(RelativeLayout.ALIGN_TOP, dropDownLayout.getId());
-        dropDownLayoutParams.addRule(RelativeLayout.ALIGN_BOTTOM, dropDownLayout.getId());
-        dropDownLayoutParams.setMargins(3, 3, 0, 0);
 
-        dropDownLayout.setPadding(0, 0, 0, 0);
-        dropDownLayout.setBoxCornerRadii(5, 5, 5, 5);
-        dropDownLayout.setBoxStrokeWidth(0);
+        addView(linearLayout);
 
-        dropDownLayout.setBoxStrokeWidthFocused(0);
-        dropDownLayout.setLayoutParams(dropDownLayoutParams);
-
-        autoCompleteTextView = new AutoCompleteTextView(dropDownLayout.getContext());
-        autoCompleteTextView.setInputType(InputType.TYPE_NULL);
-        autoCompleteTextView.setText("+62", false);
-        autoCompleteTextView.setTextSize(16F);
-        dropDownLayout.addView(autoCompleteTextView);
-        relativeLayout.addView(textInputLayout);
-        relativeLayout.addView(dropDownLayout);
-        addView(relativeLayout);
-        setGravity(Gravity.VERTICAL_GRAVITY_MASK);
         return this;
     }
 

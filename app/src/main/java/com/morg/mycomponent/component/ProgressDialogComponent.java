@@ -50,6 +50,7 @@ public class ProgressDialogComponent extends Dialog {
 
     @Override
     public void onBackPressed() {
+        //Nonactive BackPressed
 //        super.onBackPressed();
     }
 }
