@@ -7,7 +7,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.morg.mycomponent.component.BottomSheetComponent;
 import com.morg.mycomponent.component.DialogComponent;
 import com.morg.mycomponent.component.ProgressDialogComponent;
 import com.morg.mycomponent.component.SnackBarComponent;
@@ -53,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
             dialogComponent.setSubmitOnClickListener(view1 -> Toast.makeText(this, "Logout Confirm", Toast.LENGTH_SHORT).show());
             dialogComponent.show();
         });
+
+        binding.showCase.setOnClickListener(view ->
+                startActivity(new Intent(this, ShowCaseViewActivity.class)));
+
         binding.dialog2.setOnClickListener(view -> {
             DialogComponent dialogComponent = new DialogComponent(this);
             dialogComponent.withImage(false);
@@ -92,21 +95,26 @@ public class MainActivity extends AppCompatActivity {
         titles.add("User Profile 7");
         binding.step.setTitle(titles);
         binding.bottomSheet.setOnClickListener(view -> {
-            BottomSheetComponent bottomSheetComponent = new BottomSheetComponent(this);
-            bottomSheetComponent.setTitle("Peringatan");
-            bottomSheetComponent.setDescription("Declare all the views and call them by id as specified in the Bottom Sheet layout. Finally, we will diplay the dialog using bottomSheetDialog.show().");
-            bottomSheetComponent.setButtonYes("Lanjutkan");
-            bottomSheetComponent.setButtonNo("Batal");
-            bottomSheetComponent.isButtonYes(false);
-            bottomSheetComponent.setCancelable(false);
-            bottomSheetComponent.setOnClickButtonYes(view1 -> binding.step.next());
-            bottomSheetComponent.setOnClickButtonNo(view1 -> binding.step.previous());
-            bottomSheetComponent.show(getSupportFragmentManager(), bottomSheetComponent.getTag());
-
+//            BottomSheetComponent bottomSheetComponent = new BottomSheetComponent(this);
+//            bottomSheetComponent.setTitle("Peringatan");
+//            bottomSheetComponent.setDescription("Declare all the views and call them by id as specified in the Bottom Sheet layout. Finally, we will diplay the dialog using bottomSheetDialog.show().");
+//            bottomSheetComponent.setButtonYes("Lanjutkan");
+//            bottomSheetComponent.setButtonNo("Batal");
+//            bottomSheetComponent.isButtonYes(false);
+//            bottomSheetComponent.setCancelable(false);
+//            bottomSheetComponent.setOnClickButtonYes(view1 -> binding.step.next());
+//            bottomSheetComponent.setOnClickButtonNo(view1 -> binding.step.previous());
+//            bottomSheetComponent.show(getSupportFragmentManager(), bottomSheetComponent.getTag());
+            startActivity(new Intent(this, BottomSheetActivity.class));
         });
+        binding.cardActivity.setOnClickListener(view -> {
+            startActivity(new Intent(this, CardComponentActivity.class));
+        });
+
         SnackBarComponent snackBarComponent = new SnackBarComponent(this);
         binding.toast.setOnClickListener(view -> snackBarComponent.toast("Message"));
         binding.toastBtn.setOnClickListener(view -> snackBarComponent.toastButton("Message", "Return", View::onCancelPendingInputEvents));
         binding.toastCount.setOnClickListener(view -> snackBarComponent.toastCounting("Counting", getResources().getDrawable(R.drawable.image_icon), 5, () -> binding.step.next()));
     }
+
 }

@@ -55,6 +55,22 @@
             android:text="Show Bottom Sheet" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/show_case"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoSizeTextType="uniform"
+            android:text="Show Case View" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/card_activity"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoSizeTextType="uniform"
+            android:text="Show Card Activity" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/empty_space"
             android:layout_margin="10dp"
             android:layout_width="match_parent"

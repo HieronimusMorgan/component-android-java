@@ -43,4 +43,14 @@
         <item name="android:background">@drawable/corner_bottom_sheet</item>
         <item name="colorAccent">@color/black</item>
     </style>
+
+
+    <style name="BottomSheetUndrag" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="behavior_draggable">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheetDragStyle</item>
+    </style>
+
+    <style name="BottomSheetDragStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/upper_corner_radius</item>
+    </style>
 </resources>

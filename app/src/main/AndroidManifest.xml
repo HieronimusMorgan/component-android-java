@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyComponent">
         <activity
+            android:name=".ShowCaseViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BottomSheetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CardComponentActivity"
+            android:exported="false" />
+        <activity
             android:name=".EmptySpaceActivity"
             android:exported="false" />
         <activity
