@@ -18,6 +18,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.emptySpace.setOnClickListener(view -> startActivity(new Intent(this, EmptySpaceActivity.class)));
-
+        binding.shopping.setOnClickListener(view -> startActivity(new Intent(this, ShoppingActivity.class)));
         binding.passwordMatch.isPasswordMatch(true);
         binding.passwordNotMatch.isPasswordMatch(false);
         List<String> titles = new ArrayList<>();
