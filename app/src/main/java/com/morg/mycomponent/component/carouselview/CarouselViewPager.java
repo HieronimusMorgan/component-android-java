@@ -65,7 +65,8 @@ public class CarouselViewPager extends ViewPager {
                 oldX = 0;
                 break;
             default:
-                throw new IllegalStateException("Unexpected value: " + ev.getAction());
+                //empty default
+                break;
         }
         return super.onTouchEvent(ev);
     }
