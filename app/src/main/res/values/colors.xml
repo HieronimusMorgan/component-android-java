@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
@@ -10,6 +11,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#D7D7D7</color>
     <color name="grey_1">#818181</color>
+    <color name="primary_color">#FF6F00</color>
+    <color name="secondary_color">#FE6F00</color>
+    <color name="danger">#FF2929</color>
+    <color name="grey_800">#424242</color>
+    <color name="grey_200">#4C595E</color>
 
     <!--Banner Slider-->
+    <color name="default_indicator_color_selected">#eeee</color>
+    <color name="default_indicator_color_unselected">#66eeeeee</color>
 </resources>
